@@ -1,6 +1,6 @@
 # diabetes
 
-A new Flutter project.
+PROJECT UI APLIKASI DIABETES DENGAN FLUTTER
 
 ## Getting Started
 
