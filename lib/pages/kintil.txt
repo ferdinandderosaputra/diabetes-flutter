@@ -1,0 +1,209 @@
+coba anda buatkan saya full source aplikasi diabetes dengan flutter yang di dasari warna merah putih dan juga memiliki fungsi sebagaimana konsep aplikasi diabetes umumnya tetapi hanya ui nya saja yang siap di gunakan dan debugging tanpa adanya error dan juga berikan full tutor setup pubspec.yaml sampai siap di gunakan atau di debugging 
+
+
+Please choose one (or "q" to quit): 2
+
+Launching lib/main.dart on Chrome in debug mode...
+lib/screens/home_screen.dart:53:41: Error: The getter 'AppTheme' isn't defined
+for the class 'HomeScreen'.
+ - 'HomeScreen' is from 'package:diabetes/screens/home_screen.dart'
+ ('lib/screens/home_screen.dart').
+Try correcting the name to the name of an existing getter, or defining a getter
+or field named 'AppTheme'.
+            Icon(icon, size: 48, color: AppTheme.primaryRed),
+                                        ^^^^^^^^
+Waiting for connection from debug service on Chrome...       
+
+flutter doctor --android-licenses
+Android sdkmanager not found. Update to the latest Android SDK and ensure that
+the cmdline-tools are installed to resolve this.
+
+flutter build apk --release
+
+Checking the license for package Android SDK Build-Tools 33.0.1 in /usr/lib/android-sdk/licenses
+Warning: License for package Android SDK Build-Tools 33.0.1 not accepted.
+Checking the license for package Android SDK Platform 35 in /usr/lib/android-sdk/licenses
+Warning: License for package Android SDK Platform 35 not accepted.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not determine the dependencies of task ':app:lintVitalReportRelease'.
+> Failed to install the following Android SDK packages as some licences have not been accepted.
+     platforms;android-35 Android SDK Platform 35
+     build-tools;33.0.1 Android SDK Build-Tools 33.0.1
+  To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager.
+  All licenses can be accepted using the sdkmanager command line tool:
+  sdkmanager.bat --licenses
+  Or, to transfer the license agreements from one workstation to another, see https://developer.android.com/studio/intro/update.html#download-with-gradle
+
+  Using Android SDK: /usr/lib/android-sdk
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4s
+
+
+flutter build apk --release
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':path_provider_android:compileReleaseJavaWithJavac'.
+> Could not resolve all files for configuration ':path_provider_android:androidJdkImage'.
+   > Failed to transform core-for-system-modules.jar to match attributes {artifactType=_internal_android_jdk_image, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+      > Execution failed for JdkImageTransform: /usr/lib/android-sdk/platforms/android-34/core-for-system-modules.jar.
+         > Error while executing process /usr/lib/jvm/java-21-openjdk-amd64/bin/jlink with arguments {--module-path /home/ferdinand/.gradle/caches/transforms-3/9b501bb147972e13521e2c3da2351887/transformed/output/temp/jmod --add-modules java.base --output /home/ferdinand/.gradle/caches/transforms-3/9b501bb147972e13521e2c3da2351887/transformed/output/jdkImage --disable-plugin system-modules}
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 53s
+Running Gradle task 'assembleRelease'...                           54.4s
+
+┌─ Flutter Fix ─────────────────────────────────────────────────────────────┐
+│ [!] This is likely due to a known bug in Android Gradle Plugin (AGP)      │
+│ versions less than 8.2.1, when                                            │
+│   1. setting a value for SourceCompatibility and                          │
+│   2. using Java 21 or above.                                              │
+│ To fix this error, please upgrade your AGP version to at least 8.2.1. The │
+│ version of AGP that your project uses is likely defined in:               │
+│ /home/ferdinand/diabetes/android/settings.gradle,                         │
+│ in the 'plugins' closure (by the number following                         │
+│ "com.android.application").                                               │
+│  Alternatively, if your project was created with an older version of the  │
+│  templates, it is likely                                                  │
+│ in the buildscript.dependencies closure of the top-level build.gradle:    │
+│ /home/ferdinand/diabetes/android/build.gradle,                            │
+│ as the number following "com.android.tools.build:gradle:".                │
+│                                                                           │
+│ For more information, see:                                                │
+│ https://issuetracker.google.com/issues/294137077                          │
+│ https://github.com/flutter/flutter/issues/156304                          │
+└───────────────────────────────────────────────────────────────────────────┘
+Gradle task assembleRelease failed with exit code 1
+
+Try `flutter pub outdated` for more information.
+Launching lib/main.dart on Chrome in debug mode...
+lib/main.dart:28:33: Error: Cannot invoke a non-'const' constructor where a
+const expression is expected.
+Try using a constructor or factory that is 'const'.
+        '/': (context) => const HomeScreen(),
+                                ^^^^^^^^^^
+Unhandled exception:
+Unsupported operation: Unsupported invalid type InvalidType(<invalid>)
+(InvalidType). Encountered while compiling
+file:///home/ferdinand/diabetes/lib/main.dart, which contains the type:
+FunctionType(<invalid> Function(BuildContext)).
+#0      ProgramCompiler._typeCompilationError
+(package:dev_compiler/src/kernel/compiler.dart:3442)
+#1      ProgramCompiler._emitType
+(package:dev_compiler/src/kernel/compiler.dart:3410)
+#2      ProgramCompiler._emitFunctionTagged
+(package:dev_compiler/src/kernel/compiler.dart:3243)
+#3      ProgramCompiler.visitFunctionExpression
+(package:dev_compiler/src/kernel/compiler.dart:7165)
+#4      FunctionExpression.accept (package:kernel/src/ast/expressions.dart:4609)
+#5      ProgramCompiler._visitExpression
+(package:dev_compiler/src/kernel/compiler.dart:4066)
+#6      ProgramCompiler.visitMapLiteral
+(package:dev_compiler/src/kernel/compiler.dart:7095)
+#7      MapLiteral.accept (package:kernel/src/ast/expressions.dart:4291)
+#8      ProgramCompiler._visitExpression
+(package:dev_compiler/src/kernel/compiler.dart:4066)
+#9      ProgramCompiler._emitNamedExpression
+(package:dev_compiler/src/kernel/compiler.dart:6418)
+#10     ProgramCompiler._emitArgumentList
+(package:dev_compiler/src/kernel/compiler.dart:6410)
+#11     ProgramCompiler.visitConstructorInvocation
+(package:dev_compiler/src/kernel/compiler.dart:6642)
+#12     ConstructorInvocation.accept
+(package:kernel/src/ast/expressions.dart:2687)
+#13     ProgramCompiler._visitExpression
+(package:dev_compiler/src/kernel/compiler.dart:4066)
+#14     ProgramCompiler.visitReturnStatement
+(package:dev_compiler/src/kernel/compiler.dart:4764)
+#15     ReturnStatement.accept (package:kernel/src/ast/statements.dart:1076)
+#16     ProgramCompiler._visitStatement
+(package:dev_compiler/src/kernel/compiler.dart:3971)
+#17     MappedIterable.elementAt (dart:_internal/iterable.dart:395)
+#18     ListIterator.moveNext (dart:_internal/iterable.dart:364)
+#19     new _GrowableList._ofEfficientLengthIterable
+(dart:core-patch/growable_array.dart:189)
+#20     new _GrowableList.of (dart:core-patch/growable_array.dart:150)
+#21     new List.of (dart:core-patch/array_patch.dart:39)
+#22     SetBase.toList (dart:collection/set.dart:119)
+#23     ProgramCompiler.visitBlock
+(package:dev_compiler/src/kernel/compiler.dart:4160)
+#24     Block.accept (package:kernel/src/ast/statements.dart:103)
+#25     ProgramCompiler._visitStatement
+(package:dev_compiler/src/kernel/compiler.dart:3971)
+#26     ProgramCompiler._emitFunctionScopedBody
+(package:dev_compiler/src/kernel/compiler.dart:4004)
+#27     ProgramCompiler._emitFunction.<anonymous closure>
+(package:dev_compiler/src/kernel/compiler.dart:3611)
+#28     ProgramCompiler._withLetScope
+(package:dev_compiler/src/kernel/compiler.dart:2749)
+#29     ProgramCompiler._withCurrentFunction
+(package:dev_compiler/src/kernel/compiler.dart:3749)
+#30     ProgramCompiler._emitFunction
+(package:dev_compiler/src/kernel/compiler.dart:3604)
+#31     ProgramCompiler._emitMethodDeclaration.<anonymous closure>
+(package:dev_compiler/src/kernel/compiler.dart:2301)
+#32     ProgramCompiler._withMethodDeclarationContext
+(package:dev_compiler/src/kernel/compiler.dart:3776)
+#33     ProgramCompiler._emitMethodDeclaration
+(package:dev_compiler/src/kernel/compiler.dart:2299)
+#34     ProgramCompiler._emitClassMethods
+(package:dev_compiler/src/kernel/compiler.dart:2240)
+#35     ProgramCompiler._emitClassDeclaration
+(package:dev_compiler/src/kernel/compiler.dart:1041)
+#36     ProgramCompiler._emitClass
+(package:dev_compiler/src/kernel/compiler.dart:973)
+#37     List.forEach (dart:core-patch/growable_array.dart:417)
+#38     ProgramCompiler._emitLibrary
+(package:dev_compiler/src/kernel/compiler.dart:912)
+#39     List.forEach (dart:core-patch/growable_array.dart:417)
+#40     ProgramCompiler.emitModule
+(package:dev_compiler/src/kernel/compiler.dart:620)
+#41     IncrementalJavaScriptBundler.compile
+(package:frontend_server/src/javascript_bundle.dart:231)
+#42     FrontendCompiler.writeJavaScriptBundle
+(package:frontend_server/frontend_server.dart:874)
+<asynchronous suspension>
+#43     FrontendCompiler.compile
+(package:frontend_server/frontend_server.dart:690)
+<asynchronous suspension>
+#44     listenAndCompile.<anonymous closure>
+(package:frontend_server/frontend_server.dart:1392)
+<asynchronous suspension>
+the Dart compiler exited unexpectedly.
+Waiting for connection from debug service on Chrome...             29.5s
+Failed to compile application.
+
+
+
+Launching lib/main.dart on Chrome in debug mode...
+lib/screens/help_screen.dart:251:19: Error: Member not found: 'whatsapp'.
+            Icons.whatsapp,
+                  ^^^^^^^^
+
+android/app/build.gradle:
+    applicationId "com.yourname.diabetes"
+
+android/app/src/main/AndroidManifest.xml:
+    package="com.yourname.diabetes"
+
+android/app/src/debug/AndroidManifest.xml:
+    package="com.yourname.diabetes" 
+
+android/app/src/profile/AndroidManifest.xml:
+    package="com.yourname.diabetes"
